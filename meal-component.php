@@ -29,12 +29,12 @@ function meal_component_register_my_cpts_section() {
 	 */
 
 	$labels = array(
-		"name" => __( "Section", "storefront" ),
-		"singular_name" => __( "Sections", "storefront" ),
+		"name" => __( "Section", "meal_component" ),
+		"singular_name" => __( "Sections", "meal_component" ),
 	);
 
 	$args = array(
-		"label" => __( "Section", "storefront" ),
+		"label" => __( "Section", "meal_component" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => false,
@@ -59,7 +59,40 @@ function meal_component_register_my_cpts_section() {
 
 	register_post_type( "section", $args );
 	
-	
+		/**
+	 * Post Type: Reservation.
+	 */
+
+	$labels = array(
+		"name" => __( "Reservation", "meal_component" ),
+		"singular_name" => __( "Reservations", "meal_component" ),
+	);
+
+	$args = array(
+		"label" => __( "Reservation", "meal_component" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => false,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"delete_with_user" => false,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "section", "with_front" => true ),
+		"query_var" => true,
+		"menu_position" => 6,
+		"supports" => array( "title" ),
+	);
+
+	register_post_type( "reservation", $args );
 	
 	
 	
@@ -74,12 +107,12 @@ function meal_component_register_my_cpts_recepie() {
 	 */
 
 	$labels = array(
-		"name" => __( "Recepie", "storefront" ),
-		"singular_name" => __( "Recepies", "storefront" ),
+		"name" => __( "Recepie", "meal_component" ),
+		"singular_name" => __( "Recepies", "meal_component" ),
 	);
 
 	$args = array(
-		"label" => __( "Recepie", "storefront" ),
+		"label" => __( "Recepie", "meal_component" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
